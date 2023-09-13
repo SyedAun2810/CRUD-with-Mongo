@@ -1,0 +1,82 @@
+.navbar>ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color:white !important;
+    font-size: 24px;
+    background-color: rgb(219, 224, 229);
+    padding: 10px;    
+}
+.navbar>ul>li > Link{
+    color: white !important;
+}
+.display-table{
+    border:  1px solid black;
+}
+.tablehead> th{
+    border: 1px solid black;
+    padding: 20px;
+    width: 200px;
+    font-size: 24px;
+}
+.tablehead> td{
+    border: 1px solid black;
+    padding: 17px;
+    width: 200px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* App.css */
+
+/* Container styles */
+div {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styles */
+  .form {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 30px !important;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
