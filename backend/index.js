@@ -1,12 +1,14 @@
 const express= require('express');
 const mongoose= require('mongoose');
-const cors= require('cors');
-// const UserModel = require('./models/users')
+const cors= require('cors'); 
 const UserModel= require('./models/users')
 
 const app=express();
 app.use(cors());
 app.use(express.json());
+require('dotenv').config();
+
+const port = process.env.PORT || 3333;
 
 mongoose.connect("mongodb://localhost:27017/school")
 
@@ -47,7 +49,12 @@ app.post('/createUser', (req, res) => {
       .catch(err => res.json(err));
   });
   
+if(process.env.NODE_ENV == 'production'){
+    app.use(express.static('frontend/dist'))
+}
 
-app.listen(3333, ()=>{
-    console.log("The Server is running on port 3333");
+app.listen(port, ()=>{
+    console.log(`The Server is running on port ${port}`);
 })
+    // "start": "node index.js",
+    // "dev": "nodemon index.js", 
