@@ -6,10 +6,10 @@ const UserModel= require('./models/users')
 const app=express();
 app.use(cors());
 app.use(express.json());
-require('dotenv').config();
+// require('dotenv').config();
 
 const port = process.env.PORT || 3333;
-
+const path=require('path');
 mongoose.connect("mongodb://localhost:27017/school")
 
 app.get('/getusers', (req, res) => {
@@ -49,9 +49,17 @@ app.post('/createUser', (req, res) => {
       .catch(err => res.json(err));
   });
   
-if(process.env.NODE_ENV == 'production'){
-    app.use(express.static('frontend/dist'))
-}
+// if(process.env.NODE_ENV == 'production'){
+//     app.use(express.static('frontend/dist'))
+// }
+
+
+// access static files 
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
+
+app.get("*",function(req, res){
+    res.sendFile(__dirname,'./frontend/dist/index.html')
+});
 
 app.listen(port, ()=>{
     console.log(`The Server is running on port ${port}`);
